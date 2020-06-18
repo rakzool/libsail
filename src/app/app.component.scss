@@ -1,0 +1,17 @@
+.flexhead{
+    display: flex;
+    flex-wrap: wrap;
+}
+.flex-item1{
+    flex: 1;
+     
+    border:1px solid;
+    margin-right: 10px;
+    
+
+}
+.flex-item2{
+    align-items: flex-start;
+    flex:5;
+    border:1px solid;
+}

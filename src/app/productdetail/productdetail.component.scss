@@ -1,0 +1,92 @@
+h1,h3{
+  
+    font-family: sans-serif;
+    color: black;
+     
+}
+ 
+.proImg{
+    height: 500px;
+    width: auto;
+}
+
+.flexhead{
+    display: flex;
+    flex-wrap: wrap;
+}
+.flex-item1{
+    flex: 1;
+    border-right: 2px solid;
+    padding-right :12px;
+    text-align: center;
+
+
+}
+.flex-item2{
+     
+    flex:2;   
+     margin-top: 10%;
+    padding-left: 30px;
+}
+.prode{
+     
+    padding-left: 30px;
+    text-align: center;
+}
+
+h3{
+    font-family: sans-serif;
+    color: black;
+          
+
+}
+
+button{
+    border: 1px orange solid;
+    background-color: orange;
+    border-radius: 22px;
+    margin-top: 10px;
+    
+}
+
+button:hover,
+button:active{
+    transform: scale(1.16);
+    -webkit-transform: scale(1.16);
+    transition: 350ms ease-in-out;
+    border: 1px #bb7e0e solid;
+    background-color: #bb7e0e ;
+    border-radius: 22px;
+    margin-top: 10px;
+    
+}
+ 
+ .price{
+     font-family: sans-serif;
+     background-color: orange;
+     padding: 20px;
+     border: 1px orange solid;
+     font-size: 34px;
+    border-radius: 22px;
+ }
+
+ .form{
+     border: 1px solid;
+     border-radius: 22px;
+     margin-top: 50px;
+     padding-bottom: 10px;
+     background-color: bisque;
+ }
+
+ 
+ 
+.form-ele1{
+    margin-right: 30px;
+}
+.text-area{
+    
+    padding: 20px;
+    border-radius: 22px;
+    width: 700px;
+}
+ 

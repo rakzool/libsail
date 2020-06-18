@@ -1,0 +1,35 @@
+<mat-toolbar color="primary">
+    Login
+  <span class="flex-spacer"></span>
+  <button mat-button mat-dialog-close>&times;</button>
+  </mat-toolbar>
+  
+  <!--<p>{{ user | json }}</p>-->
+  
+  <form novalidate #loginForm="ngForm" (ngSubmit)="onSubmit()">
+  
+    <mat-dialog-content>
+      <p>
+        <span class="fa fa-user fa-lg"></span>
+        <mat-form-field class="rem">
+          <input matInput placeholder="Username" type="text" [(ngModel)]="user.username" name="username" #username="ngModel" required>
+          <mat-error *ngIf="username.errors?.required">Username is required</mat-error>
+        </mat-form-field>
+        <span class="fa fa-lock fa-lg"></span>
+        <mat-form-field class="rem">
+          <input matInput placeholder="Password" type="password" [(ngModel)]="user.password" name="password" #password="ngModel" required>
+          <mat-error *ngIf="password.errors?.required">Password is required</mat-error>
+        </mat-form-field>
+         
+        <mat-checkbox [(ngModel)]="user.remember" name="remember" >Remember Me</mat-checkbox>
+      </p>
+    </mat-dialog-content>
+    <mat-dialog-actions>
+      <span class="flex-spacer"></span>
+      <button mat-button mat-dialog-close>Cancel</button>
+      <button type="submit" mat-button class="background-primary text-floral-white" [disabled]="loginForm.form.invalid" >Login</button>
+    </mat-dialog-actions>
+  </form>
+  <br>
+  <h4><a href="">Forgot password</a></h4>
+  <h4><a href="">Creat Account</a></h4>

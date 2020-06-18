@@ -1,0 +1,80 @@
+<div fxFlex class="prode" *ngIf="product"  [@expand]>
+       
+    <mat-card>
+        <div class="flexhead"> 
+          <div class="flex-item1">   
+               <mat-card-header>
+                  <mat-card-title class="title">
+                      <h3>{{product.name | uppercase}}</h3>
+                  </mat-card-title>
+               </mat-card-header>
+               <img mat-card-image  class="proImg" src={{product.image}} alt={{product.name}} >
+           </div>
+           <div class="flex-item2">
+               <mat-card-content>
+                   <span class="price">Price<i class="fa fa-tag" aria-hidden="true"></i>: <i class="fa fa-inr" aria-hidden="true"></i>.{{product.price}} </span>
+                   <br><br><br>
+
+                   <h1 class="author"><i class="fa fa-user" aria-hidden="true"></i>  Author: {{product.author}}</h1>
+                  <p>{{product.description}}
+                  </p>
+               </mat-card-content>
+               <mat-card-actions>
+                   
+                    <button mat-button>BUY</button>
+                    <button mat-button>ADD TO CART</button>
+                    <button mat-button>SHARE</button>
+                    <button mat-button (click) = "goBack()">BACK</button>
+               </mat-card-actions>
+               <div *ngIf="comment">
+                 
+                    <p>{{comment.rating}}<i class="fa fa-star fa lg"></i> </p>        
+                    <p>{{comment.comment}}</p>                    
+                    <p>--<i class="fa fa-user fa lg" aria-hidden="true"></i> {{comment.author}}  <i class="fa fa-calendar" aria-hidden="true"></i> {{comment.date | date }}</p>
+        
+                 
+                </div>
+               <div *ngIf ="commentForm.valid" >
+
+                <span>  {{commentForm.value.rating}}<i class="fa fa-star fa lg"></i> </span> <br>
+                <span>{{commentForm.value.comment}}</span>                
+                <p matLine>-- {{commentForm.value.author}}</p>
+        
+               </div>
+
+
+               <div class="form">
+                   <h1>Customer Review:</h1>
+               <form novalidate [formGroup]="commentForm" #fform = "ngForm" (ngSubmit)="onSubmit()">
+                   <span class="form-ele1">
+                    <mat-form-field>
+                        <input matInput formControlName="author" placeholder="Name" type="text" required>
+                        <mat-error *ngIf="formErrors.author">{{formErrors.author}}</mat-error>
+                    </mat-form-field>
+                     
+                   </span>
+                   <span class="form-ele2">
+                       Stars <i class="fa fa-star fa lg"></i>:
+                    <mat-slider formControlName ="rating"  max="5" step="1" thumbLabel tickInterval="1"> </mat-slider>
+                   </span>
+                   <br>
+                   <span class="form-ele3">    
+                    <mat-form-field class="text-area">
+                        <textarea matInput formControlName="comment" placeholder="Your Feedback" ></textarea>
+                        <mat-error *ngIf="formErrors.comment">{{formErrors.comment}}</mat-error>
+                      </mat-form-field>
+                   </span>
+                   <br>
+
+                   <button type="submit" mat-button class="background-primary text-floral-white" [disabled]="commentForm.invalid" >Submit</button>
+               </form>
+ 
+               </div>
+
+ 
+           </div>
+        </div>
+    </mat-card>
+   
+ </div>
+ 
